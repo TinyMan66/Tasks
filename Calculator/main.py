@@ -7,9 +7,15 @@ def main():
     "/": lambda f_num, s_num: f_num / s_num
   }
 
-  f_num = float(input("Enter the first number>>"))
-  oper = input("Enter operation>>")
-  s_num = float(input("Enter the second number>>"))
+  user_input = input("Enter expression>>")
+  symb = user_input.split()
+  if (len(symb) != 3):
+      print("Oops")
+      return
+  f_num = float(symb[0])
+  oper = symb[1]
+  s_num = float(symb[2])
+
   if oper in operations_dict:
       print(operations_dict[oper](f_num, s_num))
   else:
