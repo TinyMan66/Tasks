@@ -10,14 +10,8 @@ def main():
   f_num = float(input("Enter the first number>>"))
   oper = input("Enter operation>>")
   s_num = float(input("Enter the second number>>"))
-  if oper == "+":
-      print(operations_dict["+"](f_num, s_num))
-  elif oper == "-":
-      print(operations_dict["-"](f_num, s_num))
-  elif oper == "*":
-      print(operations_dict["*"](f_num, s_num))
-  elif oper == "/":
-      print(operations_dict["/"](f_num, s_num))
+  if oper in operations_dict:
+      print(operations_dict[oper](f_num, s_num))
   else:
       print("Error")
 main()
